@@ -1,0 +1,323 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>بازی‌های ریاضی با خانم هدی</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap');
+
+*{
+    box-sizing:border-box;
+    font-family:"Vazirmatn",Tahoma,sans-serif;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    background:linear-gradient(#dff6ff,#fff0fa);
+    overflow-x:hidden;
+}
+
+/* ابرها */
+.cloud{
+    position:absolute;
+    background:white;
+    border-radius:50%;
+    opacity:.8;
+    animation:moveCloud 20s linear infinite;
+}
+
+.cloud1{
+    width:120px;
+    height:50px;
+    top:40px;
+    right:10%;
+}
+
+.cloud2{
+    width:160px;
+    height:60px;
+    top:120px;
+    left:5%;
+}
+
+@keyframes moveCloud{
+    from{transform:translateX(0)}
+    to{transform:translateX(-100px)}
+}
+
+
+/* عنوان اصلی */
+
+.header{
+    text-align:center;
+    padding:25px 10px;
+}
+
+.header h1{
+    color:#d63384;
+    font-size:35px;
+    margin:10px;
+}
+
+.header p{
+    font-size:20px;
+    color:#555;
+}
+
+
+/* کلاس درس */
+
+.classroom{
+    width:95%;
+    max-width:900px;
+    margin:auto;
+    background:#fff;
+    border-radius:30px;
+    padding:20px;
+    box-shadow:0 10px 30px #bbb;
+    position:relative;
+}
+
+
+/* تخته */
+
+.board{
+    background:#167c3a;
+    color:white;
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    font-size:24px;
+    margin-bottom:20px;
+}
+
+
+/* خانم هدی */
+
+.teacher{
+    text-align:center;
+    font-size:80px;
+    margin:10px;
+}
+
+.teacher span{
+    display:block;
+    font-size:20px;
+    color:#9c27b0;
+}
+
+
+/* مداد کوچولو */
+
+.pencil{
+    position:fixed;
+    bottom:20px;
+    left:20px;
+    font-size:70px;
+    animation:bounce 2s infinite;
+    cursor:pointer;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-20px)}
+}
+
+
+.message{
+    position:fixed;
+    bottom:100px;
+    left:20px;
+    background:white;
+    padding:15px;
+    border-radius:20px;
+    box-shadow:0 5px 15px #aaa;
+    max-width:250px;
+    display:none;
+    color:#555;
+}
+
+
+/* دانش آموزان */
+
+.students{
+    text-align:center;
+    font-size:55px;
+    margin:15px;
+}
+
+
+/* دکمه ها */
+
+.games{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+}
+
+
+.game-btn{
+    border:none;
+    border-radius:25px;
+    padding:20px;
+    font-size:22px;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+
+.game-btn:hover{
+    transform:scale(1.05);
+}
+
+
+.one{background:#9b5de5;}
+.two{background:#00bbf9;}
+.three{background:#00c853;}
+.four{background:#ffca28;color:#333;}
+.five{background:#ff7043;}
+.six{background:#ef476f;}
+.seven{background:#26a69a;}
+
+
+.footer{
+    text-align:center;
+    padding:25px;
+    color:#777;
+    font-size:18px;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<div class="cloud cloud1"></div>
+<div class="cloud cloud2"></div>
+
+<div class="header">
+
+<h1>🌸 بازی‌های ریاضی با خانم هدی 🌸</h1>
+
+<p>
+یادگیری با بازی، موفقیت با تلاش
+</p>
+
+</div>
+
+
+<div class="classroom">
+
+<div class="board">
+🌸 به کلاس بازی‌های ریاضی خوش آمدید 🌸
+</div>
+
+
+<div class="teacher">
+👩‍🏫
+<span>
+خانم هدی
+</span>
+</div>
+
+
+<div class="students">
+👧 👧 👧 👧 👧
+</div>
+<!-- دکمه های بازی ها -->
+
+<div class="games">
+
+<button class="game-btn one" onclick="openGame('zarb.html')">
+✖️ بازی ضرب
+</button>
+
+<button class="game-btn two" onclick="openGame('adadnevisi.html')">
+🔢 عددنویسی میلیارد
+</button>
+
+<button class="game-btn three" onclick="openGame('adadmarkab.html')">
+🧩 اعداد مرکب
+</button>
+
+<button class="game-btn four" onclick="openGame('olgoo.html')">
+📐 الگوها
+</button>
+
+<button class="game-btn five" onclick="openGame('ashar.html')">
+➗ اعشار
+</button>
+
+<button class="game-btn six" onclick="openGame('masahat.html')">
+📦 مساحت و حجم
+</button>
+
+<button class="game-btn seven" onclick="openGame('wheel.html')">
+🎡 چرخ‌وفلک کلاس
+</button>
+
+</div>
+
+</div>
+
+
+<!-- مداد کوچولو -->
+
+<div class="message" id="msg">
+✏️ سلام دوست خوبم!<br>
+من مداد کوچولو هستم.<br>
+آماده‌ای با هم ریاضی را بازی کنیم؟ 🌸
+</div>
+
+
+<div class="pencil" onclick="showMessage()">
+✏️
+</div>
+
+
+<div class="footer">
+
+🌸 با عشق برای دختران پرتلاش کلاس پنجم 🌸<br>
+
+👩‍🏫 خانم هدی
+
+</div>
+
+
+<script>
+
+function showMessage(){
+
+let m=document.getElementById("msg");
+
+if(m.style.display==="block"){
+m.style.display="none";
+}
+else{
+m.style.display="block";
+}
+
+}
+
+
+function openGame(page){
+
+alert("به زودی این بازی شروع می‌شود 🌸");
+
+window.location.href=page;
+
+}
+
+
+</script>
+
+
+</body>
+</html>
